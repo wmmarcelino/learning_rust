@@ -17,7 +17,7 @@ In this repository are the Rust codes implementing the most basic data structure
 
 The data structure codes are organized by folders. This means that each folder, which might has one or more files, corresponds to the implementation of a data structure.
 
-- `01-single_linked_list/`: Simply linked list
+- `single_linked_list`
 
 ## Contribution
 
