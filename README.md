@@ -1,6 +1,6 @@
 # Learning Rust
 
-This repository has some basic data structure codes which I have implemented since 2024, when I started learning the Rust programming language.
+This repository has some basic codes which I have implemented since 2024, when I started learning the Rust programming language.
 
 ## Index
 
@@ -11,13 +11,16 @@ This repository has some basic data structure codes which I have implemented sin
 
 ## About
 
-In this repository are the Rust codes implementing the most basic data structures to exercise the concepts of ownership, movement and borrowing.
+This repository contains Rust codes to practice the concepts of ownership, movement and borrowing, as well as using the main crates used in Rust development.
 
 ## Code organization
 
-The data structure codes are organized by folders. This means that each folder, which might has one or more files, corresponds to the implementation of a data structure.
+The codes are organized by folders. This means that each folder, which might has one or more files, corresponds to its implementation.
 
 - `single_linked_list`
+- `toml_reader`
+- `xml_reader`
+- `json_reader`
 
 ## Contribution
 
