@@ -49,14 +49,6 @@ impl<T> SingleLinkedList<T> {
         }
     }
 
-    pub fn get_value(node_link: NodeLink<T>) -> Option<T> {
-        None
-    }
-
-    pub fn set_value(node_link: NodeLink<T>) -> NodeLink<T> {
-        node_link
-    }
-
     pub fn append(&mut self, value:T) {
         let new = Node::new(value);
         match self.tail.take() {
