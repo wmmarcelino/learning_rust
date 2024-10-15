@@ -1,0 +1,10 @@
+[input]
+xml_file = "../data/sales.xml"
+json_file = "../data/sales.json"
+
+[postgresql]
+username = "postgres"
+password = "postgres"
+host = "localhost"
+port = "5432"
+database = "postgres"

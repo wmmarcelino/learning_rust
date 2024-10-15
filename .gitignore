@@ -1,3 +1,4 @@
-/target
-main.exe
-main.pdb
+/json_reader/target
+/toml_reader/target
+/xml_reader/target
+/data_structure/single_linked_list/target

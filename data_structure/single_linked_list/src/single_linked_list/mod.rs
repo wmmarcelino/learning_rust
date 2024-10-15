@@ -1,29 +1,41 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 
-type NodeRef<T> = Rc<RefCell<Node<T>>>;
-type Link<T> = Option<NodeRef<T>>;
+type NodeLink<T> = Rc<RefCell<Node<T>>>;
 
 #[derive(Debug)]
 pub struct Node<T> {
     value: T,
-    next: Link<T>,
+    next: Option<NodeLink<T>>,
 }
 
 impl<T> Node<T> {
-    pub fn new(value:T) -> NodeRef<T> {
+
+    /// Creates a new [`Node<T>`].
+    pub fn new(value: T) -> NodeLink<T> {
         Rc::new(RefCell::new(Node {
             value,
             next: None,
         }))
+    }
+
+    /// Gets field value.
+    pub fn get(self) -> T {
+        self.value
+
+    }
+
+    /// Sets field value with a new value.
+    pub fn set(&mut self, new_value: T) {
+        self.value = new_value;
     }
 }
 
 
 #[derive(Debug)]
 pub struct SingleLinkedList<T> {
-    head: Link<T>,
-    tail: Link<T>,
+    head: Option<NodeLink<T>>,
+    tail: Option<NodeLink<T>>,
     length: u64,
 }
 
@@ -35,6 +47,14 @@ impl<T> SingleLinkedList<T> {
             tail: None,
             length: 0,
         }
+    }
+
+    pub fn get_value(node_link: NodeLink<T>) -> Option<T> {
+        None
+    }
+
+    pub fn set_value(node_link: NodeLink<T>) -> NodeLink<T> {
+        node_link
     }
 
     pub fn append(&mut self, value:T) {
@@ -56,8 +76,8 @@ impl<T> SingleLinkedList<T> {
         self.length += 1;
         self.head = Some(new.clone());
     }
-    
-    pub fn pop(&mut self) -> Link<T> {
+
+    pub fn pop(&mut self) -> Option<NodeLink<T>> {
         match self.head.take() {
             Some(first_node) => {
                 if self.length == 1 {
